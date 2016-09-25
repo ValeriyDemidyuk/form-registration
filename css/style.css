@@ -1,0 +1,157 @@
+@import "normalize.css";
+.wrapper .active {
+    color: red;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font: 100%/1em 'PT Sans', sans-serif;
+    background: url("../images/bg-form.png") repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.form__row .error {
+    border: 1px solid darkred;
+}
+
+.is-error {
+    color: darkred;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.wrapper-form {
+    width: 60%;
+    min-width: 420px;
+    background: #fff;
+    margin: 100px auto 0;
+    -webkit-box-shadow: 0 0 30px -1px rgba(26, 25, 25, 0.84);
+    -moz-box-shadow: 0 0 30px -1px rgba(26, 25, 25, 0.84);
+    box-shadow: 0 0 30px -1px rgba(26, 25, 25, 0.84);
+    box-sizing: border-box;
+}
+
+.form__header {
+    background-color: #444444;
+}
+
+.form__header h1 {
+    margin: 0;
+    line-height: 1;
+    padding: 20px;
+}
+
+.form__user-registration {
+    text-align: start;
+}
+
+.form__inner {
+    padding: 20px;
+    text-align: center;
+}
+
+.form__row {
+    width: 47%;
+    color: #000000;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.form__row:nth-child(2n) {
+    margin-left: 18px;
+}
+
+.form__name-field {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.form__row input {
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+    color: #444444;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #E5E5E5;
+    background: rgb(237, 237, 237); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(237, 237, 237, 1) 3%, rgba(255, 255, 255, 1) 63%, rgba(255, 255, 255, 1) 78%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(237, 237, 237, 1) 3%, rgba(255, 255, 255, 1) 63%, rgba(255, 255, 255, 1) 78%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 3%, rgba(255, 255, 255, 1) 63%, rgba(255, 255, 255, 1) 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+.form__row input:focus {
+    border: 1px solid #13335C;
+    outline: none;
+}
+
+.form__footer {
+    background-color: #444444;
+    padding: 15px 30px;
+}
+
+.form__footer:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.footer__update {
+    font-size: 0.75em;
+    float: left;
+    padding: 10px 0;
+}
+
+.footer__update > input {
+    width: auto;
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+}
+
+.footer__update label {
+    cursor: pointer;
+}
+
+.form-reg__btn {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.form-reg__btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.footer__link-account {
+    font-size: 0.75em;
+    text-decoration: none;
+    color: #FFAA02;
+    float: right;
+    clear: both;
+}
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link type="image/gif" rel="shortcut icon" href="images/favicon.gif">
+</head>
+<body>
+<div class="wrapper-form">
+    <div class="form__header"><h1>Registration</h1></div>
+
+    <form id="register-form" class="form__user-registration" method="post" action="test.php" name="form-registration">
+        <div class="form__inner">
+            <label class="form__row"> <span class="form__name-field">First Name:</span>
+                <input type="text" name="firstName" placeholder=""
+                       data-validate='validate-name validate-min-length-4 validate-max-length-7'></label>
+            <label class="form__row"> <span class="form__name-field">User Name:</span>
+                <input type="text" name="userName" placeholder=""
+                       data-validate="validate-surname validate-min-length-3 validate-max-length-10"></label>
+            <label class="form__row"> <span class="form__name-field">Last Name:</span>
+                <input type="text" name="lastName" placeholder=""
+                       data-validate="validate-last-name validate-min-length-8"></label>
+            <label class="form__row"> <span class="form__name-field">Email:</span>
+                <input type="text" name="email" placeholder="" data-validate="validate-email"></label>
+            <label class="form__row"><span class="form__name-field">Password:</span>
+                <input type="password" name="password" placeholder=""
+                       data-validate="validate-password validate-min-length-6"></label>
+            <label class="form__row"><span class="form__name-field">Phone:</span>
+                <input type="text" name="phone" placeholder="" data-valid='fds'
+                       data-validate="validate-phone validate-number"></label>
+        </div>
+        <div class="form__footer">
+<span class="footer__update"><input type="checkbox" name="update" id='update'><label for="update">Send me
+    update</label></span>
+            <button type="submit" class="form-reg__btn"
+                    onclick="validateRegisterFrom(this.form)">
+                REGISTRATION
+            </button>
+            <a href="#" class="footer__link-account">You have an account already? Log in here</a>
+        </div>
+    </form>
+</div>
+<script src="js/validator.js"></script>
+<script src="js/process_validation_form.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="js/ajax.js"></script>
+<script>
+    function validateRegisterFrom(form) {
+        event.preventDefault();
+        var resultValidate = validator.validate(form);
+        processValidatorForm.removeErrors(form);
+
+        if (resultValidate !== true) {
+            processValidatorForm.showErrors(resultValidate, form)
+        } else {
+            ajaxManager.sendAjax(form, function (data) {
+                if (data.success) {
+                    alert('REGISTRATION COMPLETE!')
+                } else {
+                    processValidatorForm.showErrors(data, form)
+                }
+            }, function () {
+                console.log('sorry, server returned an error')
+            });
+        }
+    }
+</script>
+</body>
+</html>
